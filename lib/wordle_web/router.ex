@@ -1,5 +1,6 @@
 defmodule WordleWeb.Router do
   use WordleWeb, :router
+  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -17,7 +18,7 @@ defmodule WordleWeb.Router do
   scope "/", WordleWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", WordleLive
   end
 
   # Other scopes may use custom stacks.
