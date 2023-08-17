@@ -19,7 +19,7 @@ defmodule WordleWeb.WordleLive do
     <p>Enter this word into your wordle game and then record the results here below.</p>
     <.form for={@form} phx-change="validate" phx-submit="submit">
       <.input type="hidden" field={@form["word"]} value={@current_guess} />
-      <.input type="text" field={@form["clue"]} />
+      <.input type="text" field={@form["clue"]} placeholder="XXYGX" />
       <button>Submit</button>
     </.form>
     """
